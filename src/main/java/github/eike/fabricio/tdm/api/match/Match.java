@@ -4,7 +4,7 @@ import github.eike.fabricio.tdm.api.team.Team;
 
 import java.util.List;
 
-public class Match {
+class Match {
 
     private List<Team> teams;
     private int killLimit;
@@ -13,7 +13,6 @@ public class Match {
         this.setTeams(teams);
         this.setKillLimit(killLimit);
     }
-
 
     public List<Team> getTeams() {
         return teams;
