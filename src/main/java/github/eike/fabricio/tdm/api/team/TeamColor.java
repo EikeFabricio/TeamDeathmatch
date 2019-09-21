@@ -4,6 +4,11 @@ public class TeamColor {
 
     private String colorValue, colorName;
 
+    public TeamColor(String colorValue, String colorName) {
+        this.colorValue = colorValue;
+        this.colorName = colorName;
+    }
+
     public String getColorValue() {
         return colorValue;
     }

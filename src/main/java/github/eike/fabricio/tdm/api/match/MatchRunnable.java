@@ -1,22 +1,16 @@
 package github.eike.fabricio.tdm.api.match;
 
-import github.eike.fabricio.tdm.api.team.Team;
-
 import java.util.Date;
-import java.util.List;
 
 class MatchRunnable extends Thread {
 
-    private List<Team> teams;
+    private Match match;
     private Date startDate, finalDate;
-    private int killLimit;
 
-    public List<Team> getTeams() {
-        return teams;
-    }
-
-    public void setTeams(List<Team> teams) {
-        this.teams = teams;
+    public MatchRunnable(Match match, Date startDate, Date finalDate) {
+        this.match = match;
+        this.startDate = startDate;
+        this.finalDate = finalDate;
     }
 
     public Date getStartDate() {
