@@ -5,11 +5,11 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class TeamPlayerDeathEvent extends Event implements Cancellable {
+public class PlayerDamageEvent extends Event implements Cancellable {
 
     private boolean cancelled;
     private HandlerList handlerList = new HandlerList();
-    private TeamPlayer killer;
+    private TeamPlayer damager;
     private TeamPlayer victim;
 
     public boolean isCancelled() {
@@ -24,12 +24,12 @@ public class TeamPlayerDeathEvent extends Event implements Cancellable {
         return handlerList;
     }
 
-    public TeamPlayer getKiller() {
-        return killer;
+    public TeamPlayer getDamager() {
+        return damager;
     }
 
-    public void setKiller(TeamPlayer killer) {
-        this.killer = killer;
+    public void setKiller(TeamPlayer damager) {
+        this.damager = damager;
     }
 
     public TeamPlayer getVictim() {

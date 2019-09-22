@@ -8,10 +8,12 @@ class Match {
 
     private List<Team> teams;
     private int killLimit;
+    private MatchStatus status;
 
-    public Match(List<Team> teams, int killLimit) {
-        this.setTeams(teams);
-        this.setKillLimit(killLimit);
+    public Match(List<Team> teams, int killLimit, MatchStatus status) {
+        this.teams = teams;
+        this.killLimit = killLimit;
+        this.status = status;
     }
 
     public List<Team> getTeams() {
@@ -29,4 +31,13 @@ class Match {
     public void setKillLimit(int killLimit) {
         this.killLimit = killLimit;
     }
+
+    public MatchStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(MatchStatus status) {
+        this.status = status;
+    }
+
 }
