@@ -19,7 +19,6 @@ public class MatchAdmin {
         return instance;
     }
 
-
     public List<Match> getMatches() {
         return matches;
     }
@@ -38,7 +37,10 @@ public class MatchAdmin {
 
     public void start() throws Exception {
         for (MatchRunnable runnable : matchesRunnable) {
-            runnable.start();
         }
+    }
+
+    public void stopMatch(Match match) {
+
     }
 }

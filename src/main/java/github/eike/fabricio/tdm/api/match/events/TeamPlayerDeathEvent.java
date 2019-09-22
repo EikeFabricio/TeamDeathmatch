@@ -1,27 +1,19 @@
 package github.eike.fabricio.tdm.api.match.events;
 
+import github.eike.fabricio.tdm.api.match.events.model.MatchEvent;
 import github.eike.fabricio.tdm.api.team.TeamPlayer;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class TeamPlayerDeathEvent extends Event implements Cancellable {
+public class TeamPlayerDeathEvent extends MatchEvent {
 
-    private boolean cancelled;
-    private HandlerList handlerList = new HandlerList();
     private TeamPlayer killer;
     private TeamPlayer victim;
 
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    public void setCancelled(boolean b) {
-        this.cancelled = b;
-    }
-
-    public HandlerList getHandlers() {
-        return handlerList;
+    public TeamPlayerDeathEvent(TeamPlayer killer, TeamPlayer victim) {
+        this.killer = killer;
+        this.victim = victim;
     }
 
     public TeamPlayer getKiller() {

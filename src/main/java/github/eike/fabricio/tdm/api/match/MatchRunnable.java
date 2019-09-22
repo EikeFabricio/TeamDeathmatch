@@ -1,8 +1,10 @@
 package github.eike.fabricio.tdm.api.match;
 
+import org.bukkit.scheduler.BukkitRunnable;
+
 import java.util.Date;
 
-class MatchRunnable extends Thread {
+class MatchRunnable extends BukkitRunnable {
 
     private Match match;
     private Date startDate, finalDate;
@@ -29,8 +31,13 @@ class MatchRunnable extends Thread {
         this.finalDate = finalDate;
     }
 
-    @Override
     public void run() {
 
     }
+
+    @Override
+    public synchronized void cancel() throws IllegalStateException {
+
+    }
+
 }

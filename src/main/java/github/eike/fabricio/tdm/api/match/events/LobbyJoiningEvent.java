@@ -6,12 +6,12 @@ import github.eike.fabricio.tdm.api.team.TeamPlayer;
 
 import java.util.List;
 
-public class LobbyExitingEvent extends MatchEvent {
+public class LobbyJoiningEvent extends MatchEvent {
 
     private List<Team> teams;
     private TeamPlayer player;
 
-    public LobbyExitingEvent(List<Team> teams, TeamPlayer teamPlayer) {
+    public LobbyJoiningEvent(List<Team> teams, TeamPlayer teamPlayer) {
         this.teams = teams;
         this.player = teamPlayer;
     }
