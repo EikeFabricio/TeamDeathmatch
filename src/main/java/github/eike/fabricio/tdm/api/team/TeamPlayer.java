@@ -23,4 +23,6 @@ public abstract class TeamPlayer implements Player {
     public Team getTeam() {
         return team;
     }
+
+    public boolean isFullyHealth() { return getMaxHealth() == getHealth(); }
 }

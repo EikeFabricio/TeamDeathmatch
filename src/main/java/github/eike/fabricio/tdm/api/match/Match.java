@@ -1,10 +1,12 @@
 package github.eike.fabricio.tdm.api.match;
 
+import github.eike.fabricio.tdm.api.match.events.MatchDeleteEvent;
 import github.eike.fabricio.tdm.api.team.Team;
+import org.bukkit.Bukkit;
 
 import java.util.List;
 
-class Match {
+public class Match {
 
     private List<Team> teams;
     private int killLimit;
@@ -40,4 +42,11 @@ class Match {
         this.status = status;
     }
 
+    public void delete() {
+        MatchAdmin.getInstance().getMatches().remove(this);
+        this.setStatus(MatchStatus.NONE);
+
+        MatchDeleteEvent event = new MatchDeleteEvent(this);
+        Bukkit.getServer().getPluginManager().callEvent(event);
+    }
 }

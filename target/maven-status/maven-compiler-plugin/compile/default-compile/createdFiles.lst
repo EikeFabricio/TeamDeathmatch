@@ -1,0 +1,16 @@
+github\eike\fabricio\tdm\api\match\events\LobbyExitingEvent.class
+github\eike\fabricio\tdm\api\match\events\MatchDeleteEvent.class
+github\eike\fabricio\tdm\api\match\events\MatchRunningEvent.class
+github\eike\fabricio\tdm\api\match\Match.class
+github\eike\fabricio\tdm\api\match\MatchStatus.class
+github\eike\fabricio\tdm\events\call\CallPlayerDamageEvent.class
+github\eike\fabricio\tdm\api\match\events\model\MatchEvent.class
+github\eike\fabricio\tdm\api\match\events\PlayerDamageEvent.class
+github\eike\fabricio\tdm\events\TeamPlayerDamageEvent.class
+github\eike\fabricio\tdm\api\match\events\TeamPlayerDeathEvent.class
+github\eike\fabricio\tdm\api\match\events\LobbyJoiningEvent.class
+github\eike\fabricio\tdm\api\match\MatchAdmin.class
+github\eike\fabricio\tdm\api\match\MatchRunnable.class
+github\eike\fabricio\tdm\api\match\events\TeamPlayerKillEvent.class
+github\eike\fabricio\tdm\api\match\events\MatchCreateEvent.class
+github\eike\fabricio\tdm\api\match\events\MatchEndingEvent.class

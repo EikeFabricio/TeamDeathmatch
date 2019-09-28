@@ -6,13 +6,13 @@ import github.eike.fabricio.tdm.api.team.Team;
 
 import java.util.List;
 
-public class MatchStartingEvent extends MatchEvent {
+public class MatchRunningEvent extends MatchEvent {
 
     private List<Team> teams;
     private int maxKills;
     private MatchStatus matchStatus;
 
-    public MatchStartingEvent(List<Team> teams, int maxKills, MatchStatus matchStatus) {
+    public MatchRunningEvent(List<Team> teams, int maxKills, MatchStatus matchStatus) {
         this.teams = teams;
         this.maxKills = maxKills;
         this.matchStatus = matchStatus;

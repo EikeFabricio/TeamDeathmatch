@@ -1,0 +1,6 @@
+name: E_TeamDeathmatch
+version: 1.0.0
+main: github.eike.fabricio.tdm.TeamDeathmatch
+author: Eike
+description: "Um plugin de minigame, tal qual seu nome é auto explicativo."
+database: false

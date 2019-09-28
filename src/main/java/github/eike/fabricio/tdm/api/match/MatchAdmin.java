@@ -1,18 +1,22 @@
 package github.eike.fabricio.tdm.api.match;
 
+import github.eike.fabricio.tdm.api.team.Team;
+import github.eike.fabricio.tdm.api.team.TeamPlayer;
+import org.bukkit.entity.Player;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MatchAdmin {
 
     private static final MatchAdmin instance = new MatchAdmin();
 
     private List<Match> matches;
-    private List<MatchRunnable> matchesRunnable;
+    private Map<Player, Team> playerTeams;
 
     private MatchAdmin() {
         this.setMatches(new ArrayList<Match>());
-        this.setMatchRunnables(new ArrayList<MatchRunnable>());
     }
 
     public static MatchAdmin getInstance() {
@@ -27,20 +31,12 @@ public class MatchAdmin {
         this.matches = matches;
     }
 
-    public List<MatchRunnable> getMatchRunnable() {
-        return matchesRunnable;
+    public TeamPlayer getTeamPlayer(Player player) {
+        TeamPlayer playerToReturn = (TeamPlayer) player;
+
+        playerToReturn.setTeam(playerTeams.get(player));
+
+        return playerToReturn;
     }
 
-    public void setMatchRunnables(List<MatchRunnable> matchesRunnable) {
-        this.matchesRunnable = matchesRunnable;
-    }
-
-    public void start() throws Exception {
-        for (MatchRunnable runnable : matchesRunnable) {
-        }
-    }
-
-    public void stopMatch(Match match) {
-
-    }
 }

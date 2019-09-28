@@ -1,5 +1,6 @@
 package github.eike.fabricio.tdm.api.match.events;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
@@ -9,8 +10,16 @@ public class PlayerDamageEvent extends Event implements Cancellable {
 
     private boolean cancelled;
     private HandlerList handlerList = new HandlerList();
-    private Player damager;
+
+    private Entity damager;
     private Player victim;
+    private double damage;
+
+    public PlayerDamageEvent(Player victim, Entity damager, double damage) {
+        this.victim = victim;
+        this.damager = damager;
+        this.damage = damage;
+    }
 
     public boolean isCancelled() {
         return cancelled;
@@ -24,11 +33,11 @@ public class PlayerDamageEvent extends Event implements Cancellable {
         return handlerList;
     }
 
-    public Player getDamager() {
+    public Entity getDamager() {
         return damager;
     }
 
-    public void setKiller(Player damager) {
+    public void setKiller(Entity damager) {
         this.damager = damager;
     }
 
@@ -38,5 +47,13 @@ public class PlayerDamageEvent extends Event implements Cancellable {
 
     public void setVictim(Player victim) {
         this.victim = victim;
+    }
+
+    public double getDamage() {
+        return damage;
+    }
+
+    public void setDamage(double damage) {
+        this.damage = damage;
     }
 }
