@@ -7,7 +7,7 @@ import org.bukkit.event.HandlerList;
 public abstract class MatchEvent extends Event implements Cancellable {
 
     private boolean cancelled;
-    private HandlerList handlerList = new HandlerList();
+    private static HandlerList handlerList = new HandlerList();
 
     public boolean isCancelled() {
         return cancelled;
@@ -17,8 +17,12 @@ public abstract class MatchEvent extends Event implements Cancellable {
         this.cancelled = cancelled;
     }
 
+    @Override
     public HandlerList getHandlers() {
         return handlerList;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlerList;
+    }
 }

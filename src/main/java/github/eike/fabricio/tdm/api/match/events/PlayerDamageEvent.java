@@ -9,7 +9,7 @@ import org.bukkit.event.HandlerList;
 public class PlayerDamageEvent extends Event implements Cancellable {
 
     private boolean cancelled;
-    private HandlerList handlerList = new HandlerList();
+    private static HandlerList handlerList = new HandlerList();
 
     private Entity damager;
     private Player victim;
@@ -29,6 +29,7 @@ public class PlayerDamageEvent extends Event implements Cancellable {
         this.cancelled = b;
     }
 
+    @Override
     public HandlerList getHandlers() {
         return handlerList;
     }
@@ -55,5 +56,9 @@ public class PlayerDamageEvent extends Event implements Cancellable {
 
     public void setDamage(double damage) {
         this.damage = damage;
+    }
+
+    public static HandlerList getHandlerList() {
+        return handlerList;
     }
 }
